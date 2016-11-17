@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     // Task configuration.
     concat: {
       dist: {
-        src: ['js_src/react_components.js'],
+        src: 'js_src/react_components.js',
         dest: 'static/js/<%= pkg.name %>.js'
       },
       frameworks: {
