@@ -14,7 +14,9 @@
 	</style>
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="favicon.ico" rel="shortcut icon"/>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/ws.js"></script>
 </head>
 <body>
 <div class="container">
@@ -31,8 +33,16 @@
 </div>
 	<div id="react"></div>
 
-<script type="text/javascript" src="js/frameworks.js"></script>
-
+<script type="text/javascript" src="js/frameworks.min.js"></script>
+    <script>
+      window.socket = new ws('ws://' + window.location.hostname + ':8088');
+        window.socket.on('frag', function(evt) {
+            $('#code').val(evt.data);
+            $('#code').trigger('change', [false]);
+            var shaderText = evt.data;
+            console.log(shaderText);
+        });
+    </script>
 	<script src="js/Shaders.js"></script>
 
 </div>
