@@ -239,14 +239,14 @@ var ActivityDisplay = React.createClass({
 });
 
 //for jsLint these are defined in other files
-//except Datadromm that is here in the self executing functions
+//except vd that is here in the self executing functions
 
-/*global L:true Datadromm:true md5:true io: true */
+/*global L:true vd:true md5:true io: true */
 
-(function (Datadromm) {
+(function (vd) {
   "use strict";
-  Datadromm.Cookie = {};
-  Datadromm.Cookie.createCookie = function (name, value, days) {
+  vd.Cookie = {};
+  vd.Cookie.createCookie = function (name, value, days) {
     var expires;
     if (days) {
       var date = new Date();
@@ -259,7 +259,7 @@ var ActivityDisplay = React.createClass({
     document.cookie = name + "=" + value + expires + "; path=/";
   };
 
-  Datadromm.Cookie.readCookie = function (name) {
+  vd.Cookie.readCookie = function (name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -274,17 +274,17 @@ var ActivityDisplay = React.createClass({
     return null;
   };
 
-  Datadromm.Cookie.eraseCookie = function (name) {
-    Datadromm.Cookie.createCookie(name, "", -1);
+  vd.Cookie.eraseCookie = function (name) {
+    vd.Cookie.createCookie(name, "", -1);
   };
-})(window.Datadromm = window.Datadromm || {});
+})(window.vd = window.vd || {});
 
-(function (Datadromm, $) {
+(function (vd, $) {
   "use strict";
   var sock,
     listeners = [];
 
-  Datadromm.Socket = function (socket) {
+  vd.Socket = function (socket) {
     return init(socket);
   };
 
@@ -340,18 +340,18 @@ var ActivityDisplay = React.createClass({
       removeListeners: removeListeners
     };
   };
-})(window.Datadromm = window.Datadromm || {}, window.jQuery);
+})(window.vd = window.vd || {}, window.jQuery);
 
 
 
-(function (Datadromm, $) {
+(function (vd, $) {
   "use strict";
-  Datadromm.Votes = function () {
+  vd.Votes = function () {
     this.votes = {};
     this.users = {};
   };
 
-  Datadromm.Votes.prototype = {
+  vd.Votes.prototype = {
     addVote: function (vote) {
       var userVote = this.findByUser(vote.user[0].username);
 
@@ -401,4 +401,4 @@ var ActivityDisplay = React.createClass({
       return newArray;
     }
   };
-})(window.Datadromm = window.Datadromm || {}, window.jQuery);
+})(window.vd = window.vd || {}, window.jQuery);

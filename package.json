@@ -7,8 +7,7 @@
     "start": "node app.js",
     "debug": "node node_modules/nodemon/bin/nodemon.js app.js",
     "test": "mocha spec/integration/init.js",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- tests/*.js",
-	  "lint": "node node_modules/jshint/bin/jshint app.js src/* spec/*"
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- tests/*.js"
   },
   "dependencies": {
     "bower": "^1.3.12",

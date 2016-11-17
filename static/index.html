@@ -23,9 +23,12 @@
 <h1 id="title">datadromm</h1>
 <div id="alert" class="none"></div>
 <div class="row-fluid">
+	<div class="span8">
+		<div id="todo"></div>
+	</div>
 	<div class="span4">
 		<div id="loginArea"></div>
-		<div id="shader" class="well">
+		<div id="shaderDiv" class="well">
 			<div id="shaderSearch"></div>
 			<div id="fsFrag"></div>
 		</div>
@@ -44,7 +47,13 @@
         });
     </script>
 	<script src="js/Shaders.js"></script>
+<script>
+window.jQuery(document).ready(function() {
+	"use strict";
 
+	var map = new vd.Map('map');
+	});
+</script>
 </div>
 </body>
 </html>
